@@ -1,5 +1,5 @@
 from flask import Flask, g, session
-from flask.ext.mail import Mail, Message
+from flask_mail import Mail, Message
 from app.database import init_db, db_session, redis
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ app.config.update(
     MAIL_PASSWORD='password'
 )
 
-from .config import config
+from config import config
 from app.routes.api import api
 from app.routes.home import home
 from app.routes.account import account
